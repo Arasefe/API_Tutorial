@@ -10,8 +10,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class CrudSpartan {
-    String url = "http://52.91.233.86:8000/";
+public class _1GetOneSpartan {
+    String url = "http://54.159.201.203:8000/";
 
     @Test
     public void getOneSpartan() {
