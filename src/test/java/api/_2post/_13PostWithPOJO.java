@@ -1,5 +1,7 @@
-package cybertek;
+package api._2post;
 
+
+import api.Spartan;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -7,8 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class _14PutSpartan {
-
+public class _13PostWithPOJO {
 
     @BeforeClass
     public void setUp() {
@@ -25,7 +26,7 @@ public class _14PutSpartan {
         Response response = RestAssured.given().accept(ContentType.JSON)
                 .and().contentType(ContentType.JSON)
                 .when().body(spartan)
-                .put("/api/spartans/");
+                .post("/api/spartans/");
         // status code
         Assert.assertEquals(response.statusCode(), 201);
         //content type

@@ -1,4 +1,4 @@
-package cybertek;
+package api._1get;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;

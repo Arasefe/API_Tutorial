@@ -1,5 +1,6 @@
-package cybertek;
+package api._6deserializationPojo;
 
+import api.Spartan;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
