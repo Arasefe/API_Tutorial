@@ -1,4 +1,4 @@
-package cybertek;
+package api;
 
 public class Spartan {
     private int id;

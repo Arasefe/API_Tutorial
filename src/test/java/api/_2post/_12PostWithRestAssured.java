@@ -1,4 +1,4 @@
-package cybertek;
+package api._2post;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
