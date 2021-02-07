@@ -14,8 +14,11 @@ public class _1GetOneSpartan {
     String url = "http://54.159.201.203:8000/";
 
     @Test
-    public void getOneSpartan() {
-
+    public void getOneSpartan1() {
+        /*
+        When user sends a get request (api/spartans/3) to spartanURL
+        Then response status code should be 200
+         */
 
         Response response = RestAssured.get(url + "api/spartans/3");
         // print status code
@@ -26,42 +29,9 @@ public class _1GetOneSpartan {
 
     }
 
-    @Test
-    public void getAllSpartans() {
-        Response response = RestAssured.get(url + "api/spartans");
-        //print status code
-        System.out.println(response.statusCode());
-        Assert.assertEquals(response.statusCode(), 200);
-        //print body
-        response.body().prettyPrint();
-
-    }
 
     @Test
-    public void viewAllSpartans() {
-        /*
-        Given Accept type is Json
-        When user sends a get request to spartanAllURL
-        Then response status code should be 200
-        And response body should be Json format
-         */
-        Response response = given().accept(ContentType.JSON)
-                .when().get(url + "api/spartans");
-        //print status code
-        Assert.assertEquals(response.statusCode(), 200);
-
-        //Verify response body is Json
-        Assert.assertEquals("application/json", response.contentType());
-
-        //Verify that body contains "Aras"
-        System.out.println(response.body().prettyPeek());
-
-        Assert.assertTrue(response.body().toString().contains("Sylas"));
-
-    }
-
-    @Test
-    public void viewOneSpartan() {
+    public void getOneSpartan2() {
         /*
         Given Accept type is Json
         When user sends a get request (api/spartans/6) to spartanURL
@@ -70,7 +40,7 @@ public class _1GetOneSpartan {
         And the name should be Tedmund
          */
         Response response=RestAssured.given().accept(ContentType.JSON)
-                .when().get(url + "api/spartans");
+                .when().get(url + "api/spartans/6");
 
 
         //print status code
@@ -79,12 +49,30 @@ public class _1GetOneSpartan {
         //Verify response body is Json
         Assert.assertEquals("application/json", response.contentType());
         // Name should be Tedmund
-        Assert.assertTrue(response.body().toString().contains("Tedmund"));
+        Assert.assertTrue(response.body().asString().contains("Tedmund"));
 
     }
+
     @Test
-    public void printKeyValues(){
+    public void getOneSpartan3() {
+        /*
+        Given Accept type is Json
+        When user sends a get request (api/spartans/67) to spartanURL
+        Then response status code should be 200
+        And response body should be Json format
+        And the name should be Tedmund
+         */
+        Response response=RestAssured.given().accept(ContentType.JSON)
+                .when().get(url + "api/spartans/67");
+
+
+        //print status code
+        Assert.assertEquals(response.statusCode(), 200);
+
+        //Verify response body is Json
+        Assert.assertEquals("application/json", response.contentType());
+        // Name should be Janette
+        Assert.assertTrue(response.body().asString().contains("Janette"));
 
     }
-
 }

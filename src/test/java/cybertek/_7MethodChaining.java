@@ -8,7 +8,7 @@ import org.hamcrest.Matchers;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class _MethodChaining {
+public class _7MethodChaining {
 
     /*
     Given Accept Type is json
@@ -37,15 +37,14 @@ public class _MethodChaining {
 
     }
 
+
     @Test
-    public void methodChainingWithHamcrest() {
+    public void methodChaining2() {
         RestAssured.given().accept(ContentType.JSON)
-                .pathParam("id",15)
+                .pathParam("id",78)
                 .when().get("/api/spartans/{id}")
                 .then().statusCode(200)
-                .and().assertThat().contentType("application/json")
-                .and().assertThat().body("id", Matchers.equalTo(15),"name",Matchers.equalTo("Meta"),
-                "gender",Matchers.equalTo("Female"),"phone",Matchers.equalTo(1938695106));
+                .and().assertThat().contentType("application/json");
 
     }
 }
