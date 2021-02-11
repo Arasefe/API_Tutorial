@@ -18,6 +18,7 @@ public class _1GetOneSpartan {
     @Test
     public void getOneSpartan1() {
         /*
+        Positive with path param
         When user sends a get request (api/spartans/3) to spartanURL
         Then response status code should be 200
          */
@@ -72,7 +73,7 @@ public class _1GetOneSpartan {
         Assert.assertEquals(response.statusCode(), 200);
 
         //Verify response body is Json
-        Assert.assertEquals("application/json", response.contentType());
+        Assert.assertEquals(response.contentType(),"application/json");
         // Name should be Janette
         Assert.assertTrue(response.body().asString().contains("Janette"));
 

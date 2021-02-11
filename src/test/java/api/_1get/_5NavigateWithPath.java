@@ -106,8 +106,30 @@ public class _5NavigateWithPath {
         System.out.println(phoneNumbers);
 
         Assert.assertEquals(response.path("name[0]"),"Tulpar");
-        Assert.assertEquals(response.path("name[1]"),"Fidole");
-        Assert.assertEquals(response.path("name[-1]"),"Tulpar");
+        Assert.assertEquals(response.path("name[1]"),"Mosheee");
+        Assert.assertEquals(response.path("name[-1]"),"Amana");
+    }
+
+    @Test
+    public void navigateWithPath4() {
+        Response response = RestAssured.given().accept(ContentType.JSON)
+                .when().get("/api/spartans/");
+        // status code
+        Assert.assertEquals(response.statusCode(), 200);
+        //content type
+        Assert.assertEquals(response.contentType(), "application/json");
+
+        List<String>names=response.path("name");
+        List<Long>phoneNumbers=response.path("phone");
+        int i=0;
+        for (String name:names) {
+            System.out.println(name+":"+phoneNumbers.get(i));
+            i++;
+        }
+
+        Assert.assertEquals(response.path("name[0]"),"Tulpar");
+        Assert.assertEquals(response.path("name[1]"),"Mosheee");
+        Assert.assertEquals(response.path("name[-1]"),"Amana");
 
 
     }

@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class _15DeleteSpartan {
+public class DeleteSpartan {
 
     @BeforeClass
     public void setUp() {
@@ -15,18 +15,35 @@ public class _15DeleteSpartan {
     }
 
     @Test
-    public void postWithPOJO1() {
+    public void deleteSpartan1() {
 
         Response response = RestAssured.given().accept(ContentType.JSON)
                 .and().contentType(ContentType.JSON)
-                .pathParam("id",103)
+                .pathParam("id",99)
                 .when().delete("/api/spartans/{id}");
         // status code
         Assert.assertEquals(response.statusCode(), 204);
 
-        RestAssured.given().pathParam("id",103)
+        RestAssured.given().pathParam("id",99)
                 .when().get("/api/spartans/{id}")
                 .then().assertThat().statusCode(404);
 
     }
+
+    @Test
+    public void deleteSpartan2() {
+
+        Response response = RestAssured.given().accept(ContentType.JSON)
+                .and().contentType(ContentType.JSON)
+                .pathParam("id",10)
+                .when().delete("/api/spartans/{id}");
+        // status code
+        Assert.assertEquals(response.statusCode(), 204);
+
+        RestAssured.given().pathParam("id",10)
+                .when().get("/api/spartans/{id}")
+                .then().assertThat().statusCode(404);
+
+    }
+
 }

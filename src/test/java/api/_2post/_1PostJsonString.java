@@ -13,27 +13,27 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.baseURI;
 
-public class _12PostWithRestAssured {
+public class _1PostJsonString {
     @BeforeClass
     public void setUp() {
         baseURI = "http://54.159.201.203:8000";
     }
 
     @Test
-    public void postWithRestAssured1(){
+    public void postWithStringJson(){
         /*
         {
-        "name": "MoshHamedani",
+        "name": "Moshe",
         "gender": "Male",
-        "phone": 1111111111
+        "phone": 1873129137
         }
          */
         Response response = RestAssured.given().accept(ContentType.JSON)
                 .contentType(ContentType.JSON)
                 .body("{\n" +
-                        "        \"name\": \"MoshHamedani\",\n" +
+                        "        \"name\": \"Moshe\",\n" +
                         "        \"gender\": \"Male\",\n" +
-                        "        \"phone\": 1111111111\n" +
+                        "        \"phone\": 1873129137\n" +
                         "        }")
                 .when().post("/api/spartans/");
         // status code is 201
@@ -48,9 +48,9 @@ public class _12PostWithRestAssured {
         String gender = jsonPath.getString("data.gender");
         int phone = jsonPath.getInt("data.phone");
 
-        Assert.assertEquals(name,"MoshHamedani");
+        Assert.assertEquals(name,"Moshe");
         Assert.assertEquals(gender,"Male");
-        Assert.assertEquals(phone,1111111111);
+        Assert.assertEquals(phone,1873129137);
     }
 
 
