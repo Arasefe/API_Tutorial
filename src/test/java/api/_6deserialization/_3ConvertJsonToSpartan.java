@@ -1,4 +1,4 @@
-package api._6deserializationPojo;
+package api._6deserialization;
 
 import api.Spartan;
 import io.restassured.RestAssured;
@@ -8,9 +8,12 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.List;
+import java.util.Map;
+
 import static io.restassured.RestAssured.baseURI;
 
-public class _10SpartanPOJODeserialization {
+public class _3ConvertJsonToSpartan {
     /*
     "id": 9,
     "name": "Florrie",
@@ -23,7 +26,7 @@ public class _10SpartanPOJODeserialization {
     }
 
     @Test
-    public void convertJsonSpartan1() {
+    public void convertJsonToSpartan1() {
         Response response = RestAssured.given().accept(ContentType.JSON)
                 .and().pathParam("id", 9)
                 .when().get("/api/spartans/{id}");
@@ -58,6 +61,21 @@ public class _10SpartanPOJODeserialization {
         Assert.assertEquals(spartan.getGender(),"Male");
         Assert.assertEquals(spartan.getPhone(),4978976378L);
 
+    }
+    @Test
+    public void convertJsonToSpartan3(){
+        Response response = RestAssured.given().accept(ContentType.JSON)
+                .and().when().get("/api/spartans");
+
+        List<Map<String,Object>>list = response.body().as(List.class);
+
+        for (Map<String, Object> stringObjectMap : list) {
+            for (String eachKey : stringObjectMap.keySet()) {
+                Object eachValue=stringObjectMap.get(eachKey);
+                System.out.println(eachKey+" : "+eachValue);
+            }
+        }
+        //System.out.println(list);
     }
 
 }

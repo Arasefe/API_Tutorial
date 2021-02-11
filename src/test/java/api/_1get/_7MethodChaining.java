@@ -2,6 +2,8 @@ package api._1get;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import org.hamcrest.Matcher;
+import org.hamcrest.Matchers;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -42,6 +44,44 @@ public class _7MethodChaining {
                 .when().get("/api/spartans/{id}")
                 .then().statusCode(200)
                 .and().assertThat().contentType("application/json");
+
+    }
+    @Test
+    public void methodChaining3(){
+        /*
+        "id": 100,
+        "name": "Terence",
+        "gender": "Male",
+        "phone": 1311814806
+}
+         */
+        RestAssured.given().accept(ContentType.JSON)
+                .and().pathParam("id",100)
+                .when().get("/api/spartans/{id}")
+                .then().assertThat().statusCode(200)
+                .and().assertThat().contentType("application/json")
+                .and().assertThat().body("id", Matchers.equalTo(100),
+                "name",Matchers.equalTo("Terence"),
+                "gender", Matchers.equalTo("Male"),
+                "phone",Matchers.equalTo(1311814806));
+
+    }
+    @Test
+    public void methodChaining4(){
+        /*
+        "id": 46,
+        "name": "Delora",
+        "gender": "Female",
+        "phone": 4115324496
+         */
+        RestAssured.given().accept(ContentType.JSON)
+                .and().pathParam("id",46)
+                .when().get("/api/spartans/{id}")
+                .then().assertThat().statusCode(200)
+                .and().assertThat().contentType("application/json")
+                .and().assertThat().body("id",Matchers.equalTo(46)
+                ,"name",Matchers.equalTo("Delora"),"gender",Matchers.equalTo("Female"),
+                "phone",Matchers.equalTo(4115324496L));
 
     }
 }
