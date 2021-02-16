@@ -1,8 +1,6 @@
-package selfStudy;
+package rahul;
 
-import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-import org.hamcrest.Matchers;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

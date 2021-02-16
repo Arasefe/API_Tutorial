@@ -1,4 +1,4 @@
-package selfStudy;
+package rahul;
 
 public class Payload {
     public static String AddPlace() {
@@ -49,5 +49,14 @@ public class Payload {
                 "]\n" +
                 "}\n" +
                 "\n";
+    }
+
+    public static String addBook(String isbn,String aisle){
+        return "{\n" +
+                "    \"name\": \"Learn Appium Atomation with Java\",\n" +
+                "    \"isbn\": \""+isbn+"\",\n" +
+                "    \"aisle\": \""+aisle+"\",\n" +
+                "    \"author\": \"John Foe\"\n" +
+                "}";
     }
 }

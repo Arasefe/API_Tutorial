@@ -1,4 +1,4 @@
-package selfStudy;
+package rahul;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
