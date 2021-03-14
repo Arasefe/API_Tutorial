@@ -13,7 +13,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.baseURI;
 
-public class _1PostJsonString {
+public class _1PostWithString {
     @BeforeClass
     public void setUp() {
         baseURI = "http://54.159.201.203:8000";
@@ -54,30 +54,5 @@ public class _1PostJsonString {
     }
 
 
-    @Test
-    public void postWithRestAssured2(){
-        Map<String,Object> map=new LinkedHashMap<>();
-        map.put("name","Amana");
-        map.put("gender","Female");
-        map.put("phone",9843992992L);
-        Response response = RestAssured.given().accept(ContentType.JSON)
-                .contentType(ContentType.JSON)
-                .body(map)
-                .when().post("/api/spartans/");
-        // status code is 201
-        Assert.assertEquals(response.statusCode(),201);
-        //content type
-        Assert.assertEquals(response.contentType(),"application/json");
-        //Response body includes the message "A Spartan is Born!"
-        Assert.assertTrue(response.body().asString().contains("A Spartan is Born!"));
 
-        JsonPath jsonPath=  response.jsonPath();
-        String name = jsonPath.getString("data.name");
-        String gender = jsonPath.getString("data.gender");
-        long phone = jsonPath.getLong("data.phone");
-
-        Assert.assertEquals(name,"Amana");
-        Assert.assertEquals(gender,"Female");
-        Assert.assertEquals(phone,9843992992L);
-    }
 }

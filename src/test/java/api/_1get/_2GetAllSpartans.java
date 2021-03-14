@@ -13,7 +13,7 @@ public class _2GetAllSpartans {
 
     @BeforeClass
     public void setClass(){
-        RestAssured.baseURI="http://54.159.201.203:8000";
+        RestAssured.baseURI="http://54.159.201.203:8000";       //Otherwise ConnectionRefusedError
     }
     @Test
     public void getAllSpartans1(){

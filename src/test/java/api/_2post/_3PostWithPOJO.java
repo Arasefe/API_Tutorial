@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class _2PostWithPOJO {
+public class _3PostWithPOJO {
 
     @BeforeClass
     public void setUp() {
@@ -39,9 +39,8 @@ public class _2PostWithPOJO {
         Assert.assertEquals(jsonPath.getString("success"),"A Spartan is Born!");
 
     }
-
     @Test
-    public void postWithPOJO2() {
+    public void postWithPOJO2(){
         Spartan spartan = new Spartan(102,"Aliya","Female",7735103092L);
         spartan.setName("Banu");
         spartan.setGender("Female");
@@ -65,7 +64,6 @@ public class _2PostWithPOJO {
         Assert.assertEquals(gender,"Female");
         Object phone=response.path("data.phone");
         Assert.assertEquals(phone,7735104264L);
-
     }
 
     @Test

@@ -34,13 +34,4 @@ public class BookIT {
         System.out.println(response.prettyPrint());
     }
 
-    @Test
-    public void bearerToken2() {
-
-    }
-
-    @Test
-    public void bearerToken3() {
-
-    }
 }
