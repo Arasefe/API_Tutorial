@@ -49,15 +49,10 @@ public class _5UsePartialDeck {
                 .and().queryParam("cards", "AS,2S,KS,AD,2D,KD,AC,2C,KC,AH,2H,KH")
                 .when().get("deck/new/shuffle/");
         deck_id=response.path("deck_id").toString();
-//        given().accept(ContentType.JSON)
-//                .and().queryParam("cards","AS,2S,KS,AD,2D,KD,AC,2C,KC,AH,2H,KH")
-//        .when().get("deck/new/shuffle/")
-//        .then().assertThat().statusCode(200)
-//        .and().assertThat().body("success", Matchers.equalTo(true),
-//                "deck_id",Matchers.equalTo(deck_id),"shuffled",true);
+
 
         Assert.assertEquals(response.statusCode(),200);
-        Assert.assertEquals(response.body().path("success").toString(),true);
+
 
 
     }

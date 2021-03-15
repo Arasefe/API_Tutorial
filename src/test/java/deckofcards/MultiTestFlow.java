@@ -52,28 +52,7 @@ public class MultiTestFlow {
         response.body().prettyPrint();
         list.add(deck_id);
     }
-    @Test
-    public void shuffleWithGet2() {
-        /*
-        Add deck_count as a GET or POST parameter to define the number of Decks you want to use.
-        Blackjack typically uses 6 decks. The default is 1.
-         */
-        Response response = given().accept(ContentType.JSON)
-                .when().get("deck/new/shuffle/");
 
-        deck_id = response.body().path("deck_id").toString();
-        //print status code
-        Assert.assertEquals(response.getStatusCode(), 200);
-
-        //Verify response body is Json
-        Assert.assertEquals("application/json", response.contentType());
-
-        // Verify that the resource deck_id
-        System.out.println(deck_id);
-        Assert.assertEquals(response.body().path("deck_id"), deck_id);
-
-        response.body().prettyPrint();
-    }
     @Test
     public void drawACard() {
         /*

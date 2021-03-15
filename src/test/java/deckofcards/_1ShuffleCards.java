@@ -25,7 +25,7 @@ public class _1ShuffleCards {
         Blackjack typically uses 6 decks. The default is 1.
          */
         Response response = given().accept(ContentType.JSON)
-                .and().queryParam("deck_count", 1)
+                .and().queryParam("deck_count", 0)
                 .when().get("deck/new/shuffle/");
 
         deck_id = response.body().path("deck_id").toString();
