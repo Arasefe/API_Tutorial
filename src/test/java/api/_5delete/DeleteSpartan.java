@@ -5,6 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class DeleteSpartan {
@@ -17,8 +18,7 @@ public class DeleteSpartan {
     @Test
     public void deleteSpartan1() {
 
-        Response response = RestAssured.given().accept(ContentType.JSON)
-                .and().contentType(ContentType.JSON)
+        Response response = RestAssured.given()
                 .pathParam("id",99)
                 .when().delete("/api/spartans/{id}");
         // status code
@@ -33,8 +33,7 @@ public class DeleteSpartan {
     @Test
     public void deleteSpartan2() {
 
-        Response response = RestAssured.given().accept(ContentType.JSON)
-                .and().contentType(ContentType.JSON)
+        Response response = RestAssured.given()
                 .pathParam("id",10)
                 .when().delete("/api/spartans/{id}");
         // status code

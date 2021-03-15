@@ -26,7 +26,7 @@ public class _3PostWithPOJO {
 
         Response response = RestAssured.given().accept(ContentType.JSON)
                 .and().contentType(ContentType.JSON)
-                .when().body(spartan)
+                .when().body(spartan)   // content will automatically be serialized to JSON or XML. This works POST, PATCH and PUT only
                 .post("/api/spartans/");
         // status code
         Assert.assertEquals(response.statusCode(), 201);

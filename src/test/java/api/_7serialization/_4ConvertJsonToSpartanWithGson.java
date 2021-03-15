@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.baseURI;
 
-public class _1ConvertJsonStringToSpartan {
+public class _4ConvertJsonToSpartanWithGson {
     /*
     {
    "id": 9,

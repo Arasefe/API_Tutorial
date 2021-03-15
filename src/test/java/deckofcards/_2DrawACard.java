@@ -12,9 +12,10 @@ import static io.restassured.RestAssured.given;
 
 public class _2DrawACard {
     static int remaining;
+    static int counter;
     @BeforeClass
     public void setClass() {
-        RestAssured.baseURI = "https://deckofcardsapi.com/";
+        RestAssured.baseURI = "https://deckofcardsapi.com/api/";
     }
 
     @Test
@@ -26,24 +27,19 @@ public class _2DrawACard {
         After two weeks, if no actions have been made on the deck then we throw it away.
         TIP: replace <<deck_id>> with "new" to create a shuffled deck and draw cards from that deck in the same request.
          */
+
         Response response = given().accept(ContentType.JSON)
+                .pathParam("deck_id","9g7xpnw1301c")               //9g7xpnw1301c
                 .queryParam("count", 2)
-                .pathParam("deck_id", "9g7xpnw1301c")
-                .when().get(baseURI + "api/deck/{deck_id}/draw/");
+                .when().get("deck/{deck_id}/draw/");
 
-
+        System.out.println("Deck id"+_1ShuffleCards.deck_id);
         //print status code
-        Assert.assertEquals(response.getStatusCode(), 200);
+        //Assert.assertEquals(response.getStatusCode(), 200);
         remaining = response.path("remaining");
         //Verify response body is Json
-        Assert.assertEquals("application/json", response.contentType());
+        //Assert.assertEquals("application/json", response.contentType());
         response.body().prettyPrint();
-
-        Assert.assertEquals(remaining,40);
-
-
-
-        
 
     }
     
