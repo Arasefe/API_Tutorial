@@ -1,10 +1,10 @@
-package rahul.pojo;
+package additionalStudy.pojo;
 
 public class GetCourse {
     private String url;
     private String services;
     private String expertise;
-    private rahul.pojo.Courses Courses;
+    private additionalStudy.pojo.Courses Courses;
     private String instructor;
     private String linkedIn;
 

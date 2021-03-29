@@ -1,7 +1,6 @@
-package rahul.pojo;
+package additionalStudy.pojo;
 
-public class Api {
-
+public class Mobile {
     private String courseTitle;
     private String price;
     public String getCourseTitle() {
@@ -16,6 +15,5 @@ public class Api {
     public void setPrice(String price) {
         this.price = price;
     }
-
 
 }

@@ -1,14 +1,8 @@
-package rahul;
+package additionalStudy;
 
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
-import org.hamcrest.Matchers;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
 

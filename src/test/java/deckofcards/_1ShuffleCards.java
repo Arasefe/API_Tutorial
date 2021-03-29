@@ -19,7 +19,7 @@ public class _1ShuffleCards {
     }
 
     @Test
-    public void shuffleWithGet1() {
+    public void shuffleExistingDeck() {
         /*
         Add deck_count as a GET or POST parameter to define the number of Decks you want to use.
         Blackjack typically uses 6 decks. The default is 1.
@@ -43,7 +43,7 @@ public class _1ShuffleCards {
     }
 
     @Test
-    public void shuffleWithGet2() {
+    public void shuffleANewDeck() {
         /*
         Add deck_count as a GET or POST parameter to define the number of Decks you want to use.
         Blackjack typically uses 6 decks. The default is 1.

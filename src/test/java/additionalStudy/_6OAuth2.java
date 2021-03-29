@@ -1,4 +1,4 @@
-package rahul;
+package additionalStudy;
 
 import static io.restassured.RestAssured.*;
 

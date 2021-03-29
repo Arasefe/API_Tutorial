@@ -1,4 +1,4 @@
-package rahul.pojo;
+package additionalStudy.pojo;
 
 import java.util.List;
 

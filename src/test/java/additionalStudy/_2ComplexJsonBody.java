@@ -1,4 +1,4 @@
-package rahul;
+package additionalStudy;
 
 import io.restassured.path.json.JsonPath;
 import org.testng.Assert;

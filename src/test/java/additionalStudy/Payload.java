@@ -1,4 +1,4 @@
-package rahul;
+package additionalStudy;
 
 public class Payload {
     public static String AddPlace() {
