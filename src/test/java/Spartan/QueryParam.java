@@ -1,4 +1,4 @@
-package cybertek;
+package Spartan;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class _4QueryParam {
+public class QueryParam {
 
      /*
     Given Accept Type is json

@@ -1,4 +1,4 @@
-package cybertek;
+package Spartan;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class _5NavigateInsideJson {
+public class NavigateInsideJson {
 
      /*
     Given Accept Type is json

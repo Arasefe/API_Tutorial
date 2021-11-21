@@ -1,14 +1,12 @@
-package cybertek;
+package Spartan;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class _MethodChaining {
+public class MethodChaining {
 
     /*
     Given Accept Type is json
