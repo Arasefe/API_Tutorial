@@ -1,10 +1,9 @@
-package Spartan;
+package Spartan.tests;
 
-import Spartan.dataModel.Spartan;
+import Spartan.dataModel.SpartanResponse;
 import Spartan.endpoints.SpartanEndpoint;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
 import org.testng.annotations.Test;
+
 
 import java.util.List;
 
@@ -14,9 +13,9 @@ public class GetAllSpartans {
 
     @Test
     public void test_GetAllSpartans(){
-          List<Spartan> spartanList = spartanEndpoint.getAllSpartans();
+          List<SpartanResponse> spartanList = spartanEndpoint.getAllSpartans();
 
-        for (Spartan spartan : spartanList) {
+        for (SpartanResponse spartan : spartanList) {
             System.out.println(spartan.getName());
         }
     }
